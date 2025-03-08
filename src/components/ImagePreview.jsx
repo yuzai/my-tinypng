@@ -34,7 +34,7 @@ export default function ImagePreview({
           </button>
         </div>
         
-        <div className="flex-1 overflow-auto p-2 md:p-4">
+        <div className="flex-1 overflow-x-hidden p-2 md:p-4">
           <div className="relative w-full h-[70vh] bg-[#f0f0f0] rounded-lg select-none touch-pan-x">
             <div className="absolute inset-0 flex items-center justify-center">
               {/* 原始图片容器 */}
