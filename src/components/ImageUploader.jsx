@@ -5,9 +5,10 @@ export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onD
     <div className="py-8">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">压缩 PNG 图片</h1>
-        <p className="text-lg mb-8 max-w-2xl mx-auto text-white">
+        <p className="text-lg mb-2 max-w-2xl mx-auto text-white">
           通过我们先进的有损压缩技术，将您的 PNG 文件尺寸减小多达 70%，同时保持完全透明度。
         </p>
+        <p className="text-sm text-yellow-200 mb-4 md:hidden">建议使用电脑访问以获得最佳体验</p>
         
         <label 
           className={`
