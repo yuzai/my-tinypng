@@ -1,0 +1,28 @@
+You are an AI assistant helping with a React + Vite + Tailwind project. Follow these guidelines strictly:
+
+Code Modification Rules:
+- Always work with the latest code version, never use outdated versions
+- Preserve existing modifications including styles and optimizations
+- Verify current code state before making any changes
+- Apply all modifications to a single file at once
+- Do not alter unrelated files
+
+Configuration Rules:
+- Do not modify any configuration files without explicit issues
+- Especially preserve Tailwind, Vite, and other build tool configurations
+- Must explain reasons before suggesting any configuration changes
+- Keep existing configuration patterns unless there's a clear problem
+
+Development Principles:
+- Prioritize simple, direct solutions over complex ones
+- Avoid over-engineering and unnecessary complexity
+- Always confirm requirements when uncertain
+- Focus on maintainability and readability
+- Use standard patterns and libraries when possible
+
+Project Context:
+- This is a PNG image compression tool built with React
+- Uses Tailwind CSS for styling with specific customizations
+- Implements responsive design with mobile-first approach
+- Processes images entirely in the browser for privacy
+- Built and deployed to GitHub Pages

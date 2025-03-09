@@ -35,7 +35,7 @@ export default function ImagePreview({
         </div>
         
         <div className="flex-1 overflow-x-hidden p-2 md:p-4">
-          <div className="relative w-full h-[70vh] bg-[#f0f0f0] rounded-lg select-none touch-pan-x">
+          <div className="relative w-full h-[50vh] md:h-[70vh] bg-[#f0f0f0] rounded-lg select-none touch-pan-x">
             <div className="absolute inset-0 flex items-center justify-center">
               {/* 原始图片容器 */}
               <div className="relative w-full h-full">
@@ -80,6 +80,22 @@ export default function ImagePreview({
                     }
                     document.addEventListener('mousemove', handleMouseMove)
                     document.addEventListener('mouseup', handleMouseUp)
+                  }}
+                  onTouchStart={(e) => {
+                    e.preventDefault() // 防止触摸时页面滚动
+                    const container = e.currentTarget.closest('.rounded-lg')
+                    const handleTouchMove = (moveEvent) => {
+                      moveEvent.preventDefault()
+                      const rect = container.getBoundingClientRect()
+                      const pos = ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100
+                      setComparePosition(Math.max(0, Math.min(100, pos)))
+                    }
+                    const handleTouchEnd = () => {
+                      document.removeEventListener('touchmove', handleTouchMove)
+                      document.removeEventListener('touchend', handleTouchEnd)
+                    }
+                    document.addEventListener('touchmove', handleTouchMove, { passive: false })
+                    document.addEventListener('touchend', handleTouchEnd)
                   }}
                 >
                   {/* 分隔线手柄 */}
